@@ -9,13 +9,12 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors()); 
+app.use('/books', booksRoute);
+app.use('/authors', authorsRoute);
 
 app.get('/', (req, res) => {
-  res.send('Working')
+  res.send('Home')
 });
-
-app.use('/books', booksRoute);
-app.use('/characters', charactersRoute);
 
 app.use(notFound);
 app.use(errorHandler);

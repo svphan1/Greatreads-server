@@ -1,5 +1,5 @@
 exports.seed = function(knex, Promise) {
-  return knex('authors').del()
+  return knex.raw('DELETE FROM authors; ALTER SEQUENCE authors_id_seq RESTART WITH 7')
     .then(function () {
       return knex('authors').insert([
         {

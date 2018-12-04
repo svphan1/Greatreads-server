@@ -1,8 +1,8 @@
 
 exports.seed = function(knex, Promise) {
-  return knex('table_name').del()
+  return knex('books').del()
     .then(function () {
-      return knex('table_name').insert([
+      return knex('books').insert([
         {
           id: 1, 
           title: 'Python In A Nutshell',

@@ -4,13 +4,16 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const booksRoute = require('./routes/books');
 const authorsRoute = require('./routes/authors');
+const bookAuthorRoute = require('./routes/book_author');
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors()); 
+
 app.use('/books', booksRoute);
 app.use('/authors', authorsRoute);
+app.use('/all', bookAuthorRoute);
 
 app.get('/', (req, res) => {
   res.send('Home')

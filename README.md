@@ -1,1 +1,1 @@
-#Backend and database for Better Reads 
+# Backend and database for Goodreads
